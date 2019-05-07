@@ -194,26 +194,45 @@ public class Genetics {
 		
 		while(currentSquareDirection != '-') {
 			if(currentSquareDirection == 'D') {
-				answer1 = answer1 + firstString.charAt(g);
-				answer2 = answer2 + secondString.charAt(h);
+				if(g < firstString.length()) {
+					answer1 = answer1 + firstString.charAt(g);
+				}
+				
+				if(h < secondString.length()) {
+					answer2 = answer2 + secondString.charAt(h);
+				}
+				
+				stringArray[i][j].getValue();
 				i++;
 				j++;
 				g++;
 				h++;
 				currentSquareDirection = stringArray[i][j].getDirection();
 			} else if(currentSquareDirection == 'R') {
-				answer1 = answer1 + addSpace(firstString.charAt(g));
-				answer2 = answer2 + secondString.charAt(h);
-				i++;
+				if(g < firstString.length()) {
+					answer1 = answer1 + ' ';
+				}
+				
+				if(h < secondString.length()) {
+					answer2 = answer2 + secondString.charAt(h);
+				}
+				
+				stringArray[i][j].getValue();
+				j++;
 				h++;
-				g++;
 				currentSquareDirection = stringArray[i][j].getDirection();
 			} else if(currentSquareDirection == 'B' ) {
-				answer1 = answer1 + firstString.charAt(g);
-				answer2 = answer2 + addSpace(secondString.charAt(h));
-				j++;
+				if(g < firstString.length()) {
+					answer1 = answer1 + firstString.charAt(g);
+				}
+				
+				if(h < secondString.length()) {
+					answer2 = answer2 + ' ';
+				}
+				
+				stringArray[i][j].getValue();
+				i++;
 				g++;
-				h++;
 				currentSquareDirection = stringArray[i][j].getDirection();
 			}
 		}
